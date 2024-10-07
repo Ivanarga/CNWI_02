@@ -28,6 +28,8 @@ function adicionarAlbum(){
 
     //Insere os novos dados da array principal no localStorage.
     localStorage.setItem('album', JSON.stringify(albuns));
+
+    window.location.href = "views/biblioteca.html";
   }
 }
 
@@ -63,7 +65,7 @@ function mostrarAlbuns(){
         //Exibe o botão de excluir o álbum inserido pelo usuário.
         const cell4 = row.insertCell(3);
         const img2 = document.createElement('img');
-        img2.src = 'excluir.png';
+        img2.src = 'images/excluir.png';
         img2.alt = 'Excluir';
         img2.style.width = '50px';
         img2.style.height = '50px';
