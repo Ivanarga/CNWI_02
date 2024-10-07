@@ -29,7 +29,7 @@ function adicionarAlbum(){
     //Insere os novos dados da array principal no localStorage.
     localStorage.setItem('album', JSON.stringify(albuns));
 
-    window.location.href = "views/biblioteca.html";
+    window.location.href = "biblioteca.html";
   }
 }
 
