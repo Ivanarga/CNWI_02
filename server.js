@@ -1,34 +1,40 @@
-const express = require ('express')
-const server = express()
-const bodyParser = require('body-parser')
-//Importar para ter acesso ao caminho dos arquivos
-const path = require('path')
-//Expor arquivos estáticos..
-server.use(express.static('public'))
-server.use(express.json()) //Possibilidade de usar JSON
+const express = require('express');
 
-server.use(bodyParser.urlencoded({extended:true}))
+const server = express();
 
-server.get('/cadastro', (req, res) => {
-   res.sendFile(path.join(__dirname, 'views/index.html'))
-})
-server.post('/cadastro', (req, res)=>{
-    console.log(req.body)
-    const {email, name} = req.body
-    //CAdastro os dados no banco de dados!
+const path = require('path');
+ 
+ 
+server.use(express.static(path.join(__dirname, 'public')));
+ 
+server.use(express.static(path.join(__dirname, 'views')));
+ 
+server.use(express.json());
 
-    if (email !== 'muca@email.com') {
-         return res.sendFile(path.join(__dirname, 'views/404.html'))
-    }
-    res.sendFile(path.join(__dirname, 'views/home.html'))
-})
-server.get('/pets', (req,res)=> {
-    res.send({
-        name: "Meu gato",
-        idade: "4 anos",
-        peso: "300kg"
-    })
-})
+server.use(express.urlencoded({ extended: true }));
+ 
+ 
+server.get('/', (req, res) => {
+
+    res.sendFile(path.join(__dirname, 'views/index.html'));
+
+});
+ 
+server.get('/adicionar', (req, res) => {
+
+    res.sendFile(path.join(__dirname, 'views/adicionar.html'));
+
+});
+ 
+ 
+server.get('/biblioteca', (req, res) => {
+
+    res.sendFile(path.join(__dirname, 'views/biblioteca.html'));
+
+});
+ 
 server.listen(3000, () => {
-    console.log("servidor no ar...")
-})
+
+    console.log('Servidor rodando na porta 3000');
+
+});

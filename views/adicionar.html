@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Adicionar</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,19 +20,21 @@
             </nav>
         </div>
     </header>
-    <div class="main">
-        <div class="introducao">
-            <h1 class="titulo"> Utilize o nosso organizador de albuns  online!!!</h1>
-            <p>A Records+ é uma plataforma que permite você listar, organizar e salvar álbuns musicais que você ouviu ou pretende ouvir.
-               Apenas preencha as informações em nossa página de cadastros como solicitado no formulário, envie-o e ele aparecerá em sua biblioteca.
-               Veja sua biblioteca pelo botão abaixo:
-            </p>
-            <a href="biblioteca.html">
-                <button class="catalogoredirect">Veja sua biblioteca -></button>
-             </a>
-        </div>
-        <div class="imagem">
-            <img src="images/vinil.png" alt="vinil.png">
+    <div class="main2">
+        <h1 class="titulo">Cadastrar um Álbum</h1> 
+        <form class="cadastro" id="album-form">
+            <label for="imgalbum">Imagem(URL)</label>
+            <input type="text" id="imgalbum" required>
+            
+            <label for="nomealbum">Nome do álbum</label>
+            <input type="text" id="nomealbum" required>
+            
+            <label for="artistaalbum">Artista</label>
+            <input type="text" id="artistaalbum" required>
+            
+            <button type="submit" class="catalogoredirect">Cadastrar</button>
+        </form>
+        <p id="msg" class="msg"></p>
         </div>
     </div>
     <footer>
